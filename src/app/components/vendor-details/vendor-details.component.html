@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-md-6">
+      <a routerLink="/" href="#" class="btn btn-link">
+        <i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard
+      </a>
+    </div>
+    
+  </div>
+<br>
+<div class="card">
+    <div class="card-header">
+      <strong>Update Vendor</strong>
+    </div>
+    <div *ngIf="vendor" class="card-body">
+       <form novalidate #f="ngForm" (ngSubmit)="onUpdate(f)"> 
+              <div class="form-group">
+                <label for="vendorName">Vendor Name</label>
+                <input  
+                  type="text" (focus) = "fireFocusEvent($event)"
+                  class="form-control"
+                  [ngClass]="{'is-invalid':vendorName.errors?.required && vendorName.touched || vendorName.errors?.minlength}"
+                  [(ngModel)]="vendor.vendorName"
+                  name="vendorName"
+                  #vendorName = "ngModel"
+                  minlength="2"
+                  required
+                >
+                <div *ngIf="vendorName.errors?.required && vendorName.touched" class="invalid-feedback">
+                  Vendor name is required
+                </div>
+                <div *ngIf="vendorName.errors?.minlength && vendorName.touched" class="invalid-feedback">
+                  Must be at least 2 characters
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input 
+                  type="text" (focus) = "fireFocusEvent($event)"
+                  class="form-control"
+                  [ngClass]="{'is-invalid':vendorPhone.errors?.required && vendorPhone.touched || vendorPhone.errors?.minlength}"
+                  [(ngModel)]="vendor.phone"
+                  name="phone"
+                  #vendorPhone = "ngModel"
+                  minlength="10"
+                  required
+                >
+                <div *ngIf="vendorPhone.errors?.required && vendorPhone.touched" class="invalid-feedback">
+                  Phone is required
+                </div>
+                <div *ngIf="vendorPhone.errors?.minlength && vendorPhone.touched" class="invalid-feedback">
+                  Phone is not a valid number
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label for="balance">Balance</label>
+                <input 
+                  type="number" (focus) = "fireFocusEvent($event)"
+                  class="form-control"
+                  [(ngModel)]="vendor.balance"
+                  name="balance"
+                  #vendorBalance = "ngModel"
+                  [disabled]="disableBalanceOnAdd"
+                >
+              </div>
+        
+              <div class="form-group">
+                <label for="chequeAmount">Cheque Amount</label>
+                <input 
+                  type="number" (focus) = "fireFocusEvent($event)"
+                  class="form-control"
+                  [(ngModel)]="vendor.chequeAmount"
+                  name="chequeAmount"
+                  #vendorBalance = "ngModel"
+                  [disabled]="disableBalanceOnAdd"
+                >
+              </div>
+        
+              <input type="submit" value="Submit" class="btn btn-primary btn-block">
+              
+            </form>
+
+
+    </div>
+
+        
+

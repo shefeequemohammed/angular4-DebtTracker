@@ -1,0 +1,31 @@
+<div class="container">
+    
+    <div class="row" id="pwd-container">
+      <div class="col-md-4"></div>
+      
+      <div class="col-md-4">
+        <section class="login-form">
+          <form (submit)="onSubmit()">
+            <img src="../../assets/img/logo.png" class="img-responsive d-block mx-auto" alt="" />
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+              </div>
+              <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                      
+          </form>               
+        </section>  
+        </div>
+                   
+    </div>
+      
+  </div>
+  
+  
+  
+    
+  

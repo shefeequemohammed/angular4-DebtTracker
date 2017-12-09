@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-6">
+      <h2><i class="fa fa-users"></i> Our Vendor List</h2>
+    </div>
+    <div class="col-md-6">
+      <h5 class="text-right text-secondary">Total Outstanding : {{totalOwed | currency:"INR":true }} </h5>
+    </div>
+  </div>
+  <table *ngIf="vendors?.length > 0;else noVendors" class="table table-striped">
+    <thead class="thead-inverse"> 
+      <tr>
+        <th>Vendor Name</th>
+        <th>Phone</th>
+        <th>Balance</th>
+        <th>Cheque Amount</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody> 
+            <tr *ngFor="let vendor of vendors">
+        <td>{{vendor.vendorName}}</td>
+        <td>{{vendor.phone}}</td>
+        <td>{{vendor.balance | currency:"INR":true}}</td>
+        <td>{{vendor.chequeAmount | currency:"INR":true }}</td>
+        <td>
+          <div class="btn-group">
+          <a [routerLink]="['/vendor/'+vendor.key]" href="" class="btn btn-success btn-sm">
+          <i class="fa fa-arrow-circle-o-right"></i> Update</a>
+          <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteClick(vendor.key)">
+              <i class="fa fa-minus-circle"></i> Delete</button>
+        </div>
+        </td>
+      
+    </tr>
+    </tbody>
+  </table>
+  
+  <ng-template #noVendors>
+    <hr>
+    <h5>There are no Vendors to display</h5>
+  </ng-template>
