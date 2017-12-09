@@ -1,0 +1,34 @@
+{
+  "expense" : {
+    "-L-pte0TDzt-NIYL5SHV" : {
+      "balance" : 1233.33,
+      "chequeAmount" : "888",
+      "phone" : "9895123455",
+      "vendorName" : "Chicken"
+    },
+    "-L-qaIC7X11IUK-91bxb" : {
+      "balance" : "1233",
+      "chequeAmount" : 3434,
+      "phone" : "9895123455",
+      "vendorName" : "Mutton"
+    },
+    "-L-qcugDzGWz9z-s_Yf-" : {
+      "balance" : 0,
+      "chequeAmount" : 0,
+      "phone" : "9895123455",
+      "vendorName" : "Vegetables"
+    },
+    "-L-qdFdcIqQ4r5-uwBp0" : {
+      "balance" : 0,
+      "chequeAmount" : 0,
+      "phone" : "9847012345",
+      "vendorName" : "Chicken 2"
+    },
+    "-L-rYM5PIm9XsD5-w7nx" : {
+      "balance" : 8888,
+      "chequeAmount" : 0,
+      "phone" : "9895123455",
+      "vendorName" : "Chicken 3"
+    }
+  }
+}
